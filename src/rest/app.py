@@ -1,11 +1,6 @@
 import os
 
 from fastapi import FastAPI
-from rest_lib.routes import router as rest_lib_router
-# Get the server script path (same directory as this file)
-current_dir = os.path.dirname(os.path.abspath(__file__))
-
-
 
 def create_app() -> FastAPI:
     app = FastAPI()
