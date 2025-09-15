@@ -10,7 +10,8 @@ const ChatBox = () => {
     if (!message) return;
     setLoading(true);
     try {
-      const res = await fetch("/chat", {
+      const BASE_URL = process.env.EXPO_PUBLIC_API_BASE_URL || "http://localhost:3000";
+      const res = await fetch(`${BASE_URL}/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message }),
